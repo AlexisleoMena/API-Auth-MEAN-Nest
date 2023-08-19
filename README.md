@@ -1,102 +1,41 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## Auth API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Esta aplicación te permite implementar una solución sencilla de inicio de sesión, construida utilizando el framework Nest y potenciada con autenticación JWT para garantizar una experiencia segura. La aplicación aprovecha la flexibilidad de Docker, empleando servicios tanto para la imagen de la aplicación como para una imagen de MongoDB, que sirve como base de datos.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Cómo Iniciar la Aplicación
+Sigue estos pasos para iniciar la aplicación en tu entorno local:
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
+1. Instala las dependencias de la aplicación utilizando npm:
 ```bash
-$ npm install
+  npm install
 ```
 
-## Running the app
+2. Renombra el archivo `.env.template` a `.env` y reemplaza las variables correspondientes.
 
+3. Inicia la aplicación:
 ```bash
-# development
-$ npm run start
+  # development
+  $ npm run start
 
-# watch mode
-$ npm run start:dev
+  # watch mode
+  $ npm run start:dev
 
-# production mode
-$ npm run start:prod
+  # production mode
+  $ npm run start:prod
 ```
 
-## Test
+4. Accede a la aplicación desde http://localhost:3000.
 
+## Ejecución con Docker
+Si deseas desplegar la aplicación utilizando Docker, aquí te presento los pasos necesarios:
+
+1. Asegúrate de tener Docker instalado en tu máquina.
+
+2. Abre una terminal y navega hasta la raíz del proyecto.
+
+3. Ejecuta Docker Compose:
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+  docker-compose up
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
-
-## Comandos utilizados
-```
-npm run start:dev
-nest g resource auth
-npm i @nestjs/mongoose mongoose
-npm i @nestjs/config
-npm i class-validator class-transformer
-npm i bcryptjs
-npm i --save-dev @types/bcryptjs
-npm i --save @nestjs/jwt
-nest g gu auth/guards/auth
-```
-
-## Agregar a main.ts
-```ts
-app.useGlobalPipes(
-  new ValidationPipe({
-    whitelist: true,
-    forbidNonWhitelisted: true,
-  })
-);
-```
-
-## Habilitar CORS
-main.ts
-```
-app.enableCors();
-```
+Siguiendo estos pasos, lograrás que la aplicación Auth API se encuentre operativa en un contenedor Docker.
